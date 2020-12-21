@@ -36,9 +36,10 @@ require("dotenv").config();
           collection: "session",
           ttl: parseInt(process.env.SESS_LIFETIME) / 1000,
         }),
+        proxy: true,
         cookie: {
           sameSite: true,
-          secure: process.env.NODE_ENV === "production",
+          secure: true,
           maxAge: parseInt(process.env.SESS_LIFETIME),
         },
       })
